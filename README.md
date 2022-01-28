@@ -84,7 +84,7 @@ Further analyses could result with additional insights to further improve our re
 - <u> How non-functional are the welss? </u>
     - We can anayze non-functional wells to see which can be rebuilt nad which are gone for good.
 <br><br>
-- <u> We can use census changes to see how the need for wells change from region to region.[]
+- <u> We can use census changes to see how the need for wells change from region to region.</u>
 <br><br>
 - <u>Plan for the future.</u>
     - Population of Tanzania has been increasing rapidly for a while now. Instead of only planning for today we can get future prediction data for census and plan ahaed.
