@@ -2,13 +2,17 @@
 
 **Authors:** _Hoang Nguyen, Ferit Yikar, Edel Prado_
 
+<img src="images\cover.png" width=80%>
 
 ## Overview
 
+<img src="images\UNICEF.png" width=80%>
 
 ## Business Problem
 
-There are a lot of water wells in Tanzania. About half of them are either non-functional or needs repairing. We need to come up with a model that gives us the status of the wells. Using this model we can identify which wells need to be repaired. 
+We are working with UNICEF to increase people`s water access in Tanzania. First we will identify status of current wells and plan to fix necessary wells as well as build new wells where needed. There are a lot of water wells in Tanzania. About half of them are either non-functional or needs repairing. We need to come up with a model that gives us the status of the wells. Using this model we can identify which wells need to be repaired. 
+
+<img src="images\UNICEF.png" width=80%>
 
 ***
 ## Data
@@ -33,7 +37,7 @@ We ran more than 15 models to find the best model that predicts the well status.
 <img src="images\visualizatdrivendata_submission.png" width=80%><br>
 
 ### Features of a Water Well
-Our next process was to look at how much effect each feature has on the water well. We ran permutaion importance on our model to see how important our features are. Location of the well is by far the most important one. Another important aspect was the type of the waterpoint. Total Static Head and Construction Year are 2 other important features. It is important to make sure waterpoint has access to enough water when building new wells. The last thing to keep in mind is if a well needs repair we need to check how old is the well as well. Data shows almost all wells are non-functional after 35 years. We suggest that UNICEF do not fix more than 30 years old wells, instead building new wells is a better investment.
+Our next process was to look at how much effect each feature has on the water well. We ran permutaion importance on our model to see how important our features are. Location of the well is by far the most important one, we will talk about location later. Another important aspect was the type of the waterpoint. For wells with long lifetime we recommend either using standpipes or hand-pump pipes based on where the well is located. If the water source of a well is higher, meaning well can use the gravity for extraction we recommend standpipes, if this is not possible hand-pump pipes are the best option.
 
 Here you can see the status of wells based on what year they were built.
 <img src="images\construction_year_status.png" width=80%><br>
@@ -41,42 +45,29 @@ Here you can see the status of wells based on what year they were built.
 
 ### Location, Location, Location
 
-We used our model and specifications to find the kind of house we need and used a algorithm to determine how much that house would cost in different areas. In this case, we looked for three bedroom homes and visualized it on a map.
-
-The more north you go, the prices of homes start to increase. Where as you go south, houses become much cheaper. 
-
-The zip code map on the top shows the areas of lowest average price of homes (where the darker the colored area, the higher the price)  while the bottom depicts the location of homes and their price (where  the darker the color the cheaper it is). We would recommend buying homes in the lighter areas of the zip code map.
+We used our model and specifications to map how the wells are distributed in Tanzania. We than adjusted our findings for population to see how many wells are available per capita in different regions of Tanzania as well as how many non-functional wells. We used these maps to identify areas with low functional density and high non-functional and needs repair density. These areas are our first focus because there is need for wells in these regions and the wells have not been taken care of causing non-functional/functional ratio to increase.
 
 <img src="images\3_bedroom_map.PNG" width=80%>
 
 <img src="images\3_bedroom__home_price_map.PNG" width=80%><br>
-
-
-### Four Bedroom Home Maps
-Here we have our 4 bedroom version which we used our algorithm again to determine how much a house would cost in different zip codes. Note that we have fewer zip codes with cheaper homes compared to 3 bedroom homes
 
 <img src="images\4_bedroom_map.PNG" width=80%>
 
 <img src="images\4_bedroom__home_price_map.PNG" width=80%> <br>
 
 
-### Linear Regression Model
-For each data point, we checked against our model. It looks like our model does a decent job with predicting price!
-
-<img src="images\price_predictions_vs_actual_price.png" width=80%>
-
 ***
 ## Conclusion
-This analysis gives us three recommendations for purchasing homes for KCHA's Family Matters Program:
-- <u> Where should we buy homes? </u>
-    - Buy the most amount of homes, target the lighter areas on the zip code map.
+This analysis gives us three recommendations for our Pump It Up prejoct:
+- <u> How we can identify status of the wells in Tanzania? </u>
+    - We can use our model which is 81% accurate on unseen data.
 <br><br>
 
-- <u>What feature is most important for prices of homes?</u>
-    - Grade and square feet living are the most prominent factors in price
+- <u>What features are most important when building new wells?</u>
+    - We recommend UNICEF to build either standpipes that work with gravity or hand-pump pipes. Any other motor based pump will not have a long life.
 <br><br>
-- <u>How to search for the best fit home?</u>
-    - Use the Robin Hood Algorithm™  to decide whether a specific house is a good buy compared to the KC area.
+- <u>Which areas should UNICEF focus on in this project?</u>
+    - The circled areas on the map have high non-functional or needs repair wells and low functional wells. These areas should be our first concern.
 
 ***
 ## Next Steps
