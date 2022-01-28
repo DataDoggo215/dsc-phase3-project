@@ -6,13 +6,13 @@
 
 ## Overview
 
-<img src="images\UNICEF.png" width=80%>
+<img src="images\UNICEF.png" width=30%>
 
 ## Business Problem
 
 We are working with UNICEF to increase people`s water access in Tanzania. First we will identify status of current wells and plan to fix necessary wells as well as build new wells where needed. There are a lot of water wells in Tanzania. About half of them are either non-functional or needs repairing. We need to come up with a model that gives us the status of the wells. Using this model we can identify which wells need to be repaired. 
 
-<img src="images\UNICEF.png" width=80%>
+<img src="images\drivendata.png" width=50%>
 
 ***
 ## Data
@@ -28,32 +28,37 @@ This project uses various models to understand how our parameters affect the sta
 ### Relationships of Features and Well Status
 Our first step was to take a look at the relationships with well status within the dataset.
 
-<img src="images\heatmap.png" width=80%>
-
 
 ### Model
-We ran more than 15 models to find the best model that predicts the well status. Although we had models that were more than 99% correct they did not show the same success on the unseen data. In order to prevent this overfitting we ran more models and built a model that shows similar results on both train and test data. Our best model predicted the unseen test data with a score of 81.10% in the Driven Data competition. The competition is going on for 7 years now and the best score is 82.94% 
+We ran more than 15 models to find the best model that predicts the well status. Although we had models that were more than 99% correct they did not show the same success on the unseen data. In order to prevent this overfitting we ran more models and built a model that shows similar results on both train and test data. Our best model (Bagging 500) predicted the unseen test data with a score of 81.10% in the Driven Data competition. The competition is going on for 7 years now and the best score is 82.94% 
 
-<img src="images\visualizatdrivendata_submission.png" width=80%><br>
+<img src="images\Skylar_model.png" width=65%><br>
 
 ### Features of a Water Well
 Our next process was to look at how much effect each feature has on the water well. We ran permutaion importance on our model to see how important our features are. Location of the well is by far the most important one, we will talk about location later. Another important aspect was the type of the waterpoint. For wells with long lifetime we recommend either using standpipes or hand-pump pipes based on where the well is located. If the water source of a well is higher, meaning well can use the gravity for extraction we recommend standpipes, if this is not possible hand-pump pipes are the best option.
 
-Here you can see the status of wells based on what year they were built.
-<img src="images\construction_year_status.png" width=80%><br>
-
+<img src="images\Permutation_Feature_Importance.png" width=80%><br>
+<img src="images\WaterPoint_Type.png" width=80%><br>
+<img src="images\Extraction_Type_Class.png" width=80%><br>
 
 ### Location, Location, Location
 
 We used our model and specifications to map how the wells are distributed in Tanzania. We than adjusted our findings for population to see how many wells are available per capita in different regions of Tanzania as well as how many non-functional wells. We used these maps to identify areas with low functional density and high non-functional and needs repair density. These areas are our first focus because there is need for wells in these regions and the wells have not been taken care of causing non-functional/functional ratio to increase.
 
-<img src="images\3_bedroom_map.PNG" width=80%>
+Here you can see the status of wells based on what year they were built.
 
-<img src="images\3_bedroom__home_price_map.PNG" width=80%><br>
 
-<img src="images\4_bedroom_map.PNG" width=80%>
+Functional Wells That Need Repair
 
-<img src="images\4_bedroom__home_price_map.PNG" width=80%> <br>
+<img src="images\functional_repair_well.PNG" width=80%>
+
+Functional Wells
+
+<img src="images\functional_well.PNG" width=80%><br>
+
+Non-Functional Wells
+
+<img src="images\non_functional.PNG" width=80%>
 
 
 ***
@@ -72,17 +77,21 @@ This analysis gives us three recommendations for our Pump It Up prejoct:
 ***
 ## Next Steps
 Further analyses could result with additional insights to further improve our recommendations:
-- <u> Where should we buy homes? </u>
-    - School district data
-    - Crime rate data
-    - Zip code area vs socioeconomic status
-<br><br>
 
-- <u>What feature is most important for prices of homes?</u>
-    - Additional feature data such as garage, size of rooms, or if the home is furnished or not
+- <u> We can improve our model? </u>
+    - We ran into issues with computational power. There are other more complicated models that can be explored. With better computational power we can run more models to see if we can improve our results.
 <br><br>
-- <u>How to search for the best fit home?</u>
-    - More engineering to streamline the input process
+- <u> How non-functional are the welss? </u>
+    - We can anayze non-functional wells to see which can be rebuilt nad which are gone for good.
+<br><br>
+- <u> We can use census changes to see how the need for wells change from region to region.[]
+<br><br>
+- <u>Plan for the future.</u>
+    - Population of Tanzania has been increasing rapidly for a while now. Instead of only planning for today we can get future prediction data for census and plan ahaed.
+<br><br>
+- <u>Analyze the problem.</u>
+    - We can analyze the non-functional wells to see what went wrong. Get more data on the quantity of water to figure out why wells are becoming dry.
+
 
 ***
 ## For More Information
