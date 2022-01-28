@@ -1,0 +1,7 @@
+Classifier,Accuracy,Data_Set
+BagSMOTE 300,0.7863,Train
+GradientBoosting,0.8021,Train
+Bagging 500,0.8028,Train
+BagSMOTE 300,0.7931,Competition Test
+GradientBoosting,0.8086,Competition Test
+Bagging 500,0.811,Competition Test
